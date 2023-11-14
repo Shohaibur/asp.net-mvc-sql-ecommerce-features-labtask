@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // If you have a shared layout
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Login", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" required>
+    </div>
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <button type="submit">Login</button>
+}
