@@ -128,10 +128,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>EcommerceEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
       <DependentUpon>EcommerceEntities.tt</DependentUpon>
@@ -152,6 +156,12 @@
       <DependentUpon>EcommerceEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
+      <DependentUpon>EcommerceEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>EcommerceEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
       <DependentUpon>EcommerceEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
@@ -203,9 +213,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EcommerceEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\EcommerceEntities.edmx.diagram">
-      <DependentUpon>EcommerceEntities.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -232,6 +239,8 @@
     <Content Include="Views\User\UserIndex.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Cart\CartIndex.cshtml" />
+    <Content Include="Views\Cart\ViewCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

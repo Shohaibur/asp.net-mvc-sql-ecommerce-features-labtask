@@ -14,10 +14,18 @@ namespace asp.net_mvc_ecommerce_features_labtask.Models
     
     public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.Carts = new HashSet<Cart>();
+        }
+    
         public int ProductId { get; set; }
         public string ProuductName { get; set; }
         public Nullable<int> CategoryId { get; set; }
     
         public virtual Category Category { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
     }
 }

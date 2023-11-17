@@ -26,10 +26,10 @@ namespace asp.net_mvc_ecommerce_features_labtask.Controllers
             var db = new EcommerceDBEntities();
             db.Users.Add(u);
             db.SaveChanges();
-            return RedirectToAction("UserIndex");   
+            return RedirectToAction("UserIndex");
         }
         [HttpGet]
-        public ActionResult Create() 
+        public ActionResult Create()
         {
             return  View();
         }
@@ -52,7 +52,7 @@ namespace asp.net_mvc_ecommerce_features_labtask.Controllers
                 if (user != null)
                 {
                     // Valid credentials, redirect to Home or a specific page
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("CartIndex", "Cart");
                 }
                 else
                 {

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+@using (Html.BeginForm("CartIndex", "Cart", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Cart</th>
+        </tr>
+
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.ProductId</td>
+                <td>@p.ProuductName</td>
+                <td>
+                    <input type="hidden" name="ProductId" value="@p.ProductId" />
+                    <input type="submit" value="Add" />
+                </td>
+            </tr>
+        }
+    </table>
+}
+<br />
