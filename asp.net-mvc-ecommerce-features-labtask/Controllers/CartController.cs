@@ -19,8 +19,14 @@ namespace asp.net_mvc_ecommerce_features_labtask.Controllers
         }
 
 
-     /*   [HttpPost]
-        public ActionResult CartIndex()*/
+        [HttpPost]
+        public ActionResult CartIndex(Cart c)
+        {
+            var db = new EcommerceDBEntities();
+            db.Carts.Add(c);
+            db.SaveChanges();
+            return RedirectToAction("CartIndex");
+        }
 
 
         public ActionResult ViewCart()
